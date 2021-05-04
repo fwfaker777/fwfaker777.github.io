@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        let map;
+        const CHU = { lat: 24.760003792397463, lng: 120.95304314180572 };
+        var content = 'HIHI';
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: CHU,
+                zoom: 4,
+            });
+            new google.maps.Marker({
+                position: CHU,//標記位置
+                map,//標記地圖
+                title: "Hello World!",//移至地圖標所顯示訊息
+            });
+
+            fetch('https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json')
+                .then(results => results.json())
+                .then(result => {
+                    result.forEach((item, index) => {
+                        let latLng = { lat: item.Lat, lng: item.Lng };
+                      var marker =  new google.maps.Marker({
+
+
+                            position: latLng,//標記位置
+                            map,//標記地圖
+                            title: item.District,//移至圖標所顯示訊息
+                            animation: google.maps.Animation.DROP
+                        });
+                    
+                        var infowindow = new google.maps.InfoWindow({
+                content: content
+            });
+                marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            }); 
+                        
+                    })
+                    
+                    
+                });
+              
+                
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS2Mha_0HHaKYeF7zC1hgX8HcE_1ZzSRY&callback=initMap&libraries=&v=weekly"
+        async></script>
+</body>
+
+</html>

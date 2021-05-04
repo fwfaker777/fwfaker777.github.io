@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="row">
+          <div class="col">
+            <div id="map" class="embed-responsive embed-responsive-16by9"></div>
+          </div>
+        </div>
+      </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+      <script>
+        
+  methods: {
+    // init google map
+  function  initMap() {
+      // 預設顯示的地點：台北市政府親子劇場
+      let location = {
+        lat: 25.0374865, // 經度
+        lng: 121.5647688 // 緯度
+      };
+      
+      // 建立地圖
+      this.map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 16,
+        mapTypeId: 'terrain'
+      });
+      
+      // 放置多個marker
+      fetch('https://raw.githubusercontent.com/taihochan/JsonData/main/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%9C%B0%E5%8D%80.json')
+        .then(results => results.json())
+        .then(result => {
+            console.log(result);
+            result.forEach(  r => {
+            let latLng = new google.maps.LatLng( r.geometry.coordinates[1]);
+            let marker = new google.maps.Marker({
+              position: latLng,
+              map: this.map
+            });
+          });
+      });
+
+    }
+  }
+  function  created() {
+    window.addEventListener('load', () => {
+      this.initMap();
+    });
+  }
+
+      </script>
+    
+</body>
+</html>
+
+
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<style type="text/css">
+    /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<script>
+    let map;
+    const CHU = { lat: 24.760003792397463, lng: 120.95304314180572 };
+    const TEST = [{ lat: 24.761747693857238, lng: 120.9505647805474 },
+    { lat: 24.759594605268674, lng: 120.9565085560327 },
+    { lat: 24.758289094467195, lng: 120.95218483487643 }]
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: CHU,
+            zoom: 15,
+        });
+        new google.maps.Marker({
+            position: CHU,//標記位置
+            map,//標記地圖
+            title: "Hello World!",//移至地圖標所顯示訊息
+        });
+        TEST.forEach((item, index) => {
+            new google.maps.Marker({
+                position: item,//標記位置
+                map,//標記地圖
+                title: "Marker I!",//移至圖標所顯示訊息
+                animation: google.maps.Animation.DROP
+            });
+        })
+    }
+    
+
+</script>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="d-flex  justify-content-center  ">
+        <button id="btn1" type="button" class="btn btn-dark mx-2 text-white">
+            <div class="iphone">
+                <h1>iphone</h1>
+            </div>
+        </button>
+        <button id="btn2" type="button" class="btn btn-dark mx-2 text-white">
+            <div class="ipad">
+            </div>
+            <h1>ipad</h1>
+            <div>
+        </button>
+    </div>
+    <div class="container " id="clear">
+        <div class="row">
+            <div class="col-6  mt-5">
+                <img id="cellphone" src="" alt="">
+            </div>
+            <div class="col-6  mt-5">
+                <h2 id="h1"></h2>
+                <h3 id="h1_2"></h3>
+
+                <div id="box" class=" d-flex justify-content-center  align-items-center">
+
+                    <!-- <button id="btn3" type="button" class="border  w-100 colums">
+                            <div class="columns">
+                                <div id="yellow-img">
+                                    <img id="yellow" src="" alt="">
+                                </div>
+
+                                <div id="txt">
+
+                                </div>
+                            </div>
+                        </button>
+                        <button id="btn4" type="button" class="border  w-100 "></button>
+                        <button id="btn5" type="button" class="border   w-100"></button> -->
+
+
+                </div>
+
+
+                <h2 id="h1_3"></h2>
+                <div id="box2" class=" d-flex justify-content-center  align-items-center">
+                </div>
+                <h2 id="h1_5"></h2>
+                <div id="box3" class=" d-flex justify-content-center  align-items-center">
+                </div>
+                <h2 id="h1_4"></h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        var product = {
+            iphone: {
+                Outward: [{ color: '黑色', picture: 'iphone-black.png', src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-black-201909?wid=96&hei=96&fmt=jpeg&qlt=80&.v=1566845576613' },
+                { color: '黃色', picture: 'iphone-yellow.png', src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-yellow-201909?wid=48&hei=48&fmt=jpeg&qlt=95&.v=1566845577261' },
+                { color: '紅色', picture: 'iphone-red.png', src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-red-201909?wid=96&hei=96&fmt=jpeg&qlt=80&.v=1566845577098' },
+                ],
+                spec: {
+                    stronge: [
+                        { size: '64GB', fit: 19900 },
+                        { size: '128GB', fit: 21500 },
+                        { size: '256GB', fit: 25000 },
+                    ]
+                }
+
+            },
+            ipad: {
+                Outward: [{ color: '黑色', picture: 'ipad-space.png', src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422652805' },
+                { color: '金色', picture: 'ipad-gold.png', src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422655664' },
+                { color: '白色', picture: 'ipad-hero-unselected-201909_GEO_TW.png', src: 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422653869' },
+                ],
+                spec: {
+                    stronge: [
+                        { size: '32GB', fit: 10500 },
+                        { size: '128GB', fit: 13500 },
+
+                    ]
+                },
+                Connectivity: {
+                    wifi: [
+                        { name: 'wi-fi', fit: 10500 },
+                        { name: 'wi-fi + 行動網路', fit: 14800 }
+                    ]
+                }
+            }
+
+
+        };
+        
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+        btn1.addEventListener('click',function () {clearcontent()},false);
+        btn1.addEventListener('click', function () {
+            One();
+        },false);
+        btn2.addEventListener('click',function () {clearcontent()},false);
+        btn2.addEventListener('click', function () {
+            Two();
+        },false);
+
+       
+            function clearcontent() { 
+	           let ing = document.getElementById('box');
+               ing.innerHTML="";
+               let ing2 = document.getElementById('box2');
+               ing2.innerHTML="";
+               let ing3 = document.getElementById('box3');
+               ing3.innerHTML="";
+               let ing4 = document.getElementById('h1');
+               ing4.innerHTML="";
+               let ing5 = document.getElementById('h1_2');
+               ing5.innerHTML="";
+               let ing6 = document.getElementById('h1_3');
+               ing6.innerHTML="";
+               let ing7 = document.getElementById('h1_4');
+               ing7.innerHTML="";
+               let ing8 = document.getElementById('h1_5');
+               ing8.innerHTML=" ";
+	        }
+        
+        let div = document.querySelector("#box");
+        let div2 = document.querySelector("#box2");
+        let div3 = document.querySelector("#box3");
+        function One() {
+
+            // let btn3 = document.getElementById('btn3');
+            // btn3.style.fontSize = '36px';
+            // btn3.classList.add('p-5');
+            // btn3.classList.add('border-dark', 'border-4');
+            // let txt = document.getElementById('txt');
+            // txt.innerText = "yellow";
+            // let yellow = document.getElementById('yellow');
+            // yellow.setAttribute('src', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-yellow-201909?wid=48&hei=48&fmt=jpeg&qlt=95&.v=1566845577261');
+
+            document.getElementById('btn1').disabled = true;
+            document.getElementById('btn2').disabled = false;
+            
+            let h1 = document.getElementById("h1");
+            h1.innerText = "購買 iPhone 11";
+            let h1_2 = document.getElementById('h1_2');
+            h1_2.innerHTML = "購買外觀";
+            let cellphone = document.getElementById('cellphone');
+            cellphone.setAttribute('src', 'iphone11-select-2019-family.png');
+
+
+
+           
+
+            product.iphone.Outward.forEach((item, index) => {
+                let button = document.createElement("button");
+                button.style.fontSize = '36px';
+                button.classList.add('p-3');
+                button.classList.add('border-dark', 'border-4');
+                div.appendChild(button);
+                let yellow = document.createElement("img");
+                yellow.style.width = '40px';
+                button.appendChild(yellow);
+                yellow.setAttribute('src', `${item.src}`);
+                let text = document.createElement("div");
+                text.innerText = `${item.color}`;
+                button.appendChild(text);
+                button.addEventListener('click', requestJSON1);
+                function requestJSON1() {
+                    let cellphone = document.getElementById('cellphone');
+                    cellphone.setAttribute('src', `${item.picture}`);
+                }
+            });
+           
+            let h1_3 = document.getElementById("h1_3");
+            h1_3.innerText = "選擇儲存容量。";
+            product.ipad.spec.stronge.forEach((item, index) => {
+                let button2 = document.createElement("button");
+                button2.style.fontSize = '36px';
+                button2.classList.add('p-3');
+                button2.classList.add('border-dark', 'border-4');
+                div2.appendChild(button2);
+                let text2 = document.createElement("div");
+                
+                text2.innerHTML = `${item.size} <br> ${item.fit}元`;
+                button2.appendChild(text2);
+
+                button2.addEventListener('click', requestJSON2);
+                function requestJSON2() {
+                    let h1_4 = document.getElementById("h1_4");
+                    h1_4.innerText = `NT$${item.fit}元`;
+                }
+
+
+            });
+
+            
+        }
+        function Two() {
+
+            document.getElementById('btn1').disabled = false;
+            document.getElementById('btn2').disabled = true;
+            let h1 = document.getElementById("h1");
+            h1.innerText = "購買 iPad";
+            let h1_2 = document.getElementById('h1_2');
+            h1_2.innerHTML = "外觀";
+            let cellphone = document.getElementById('cellphone');
+            cellphone.setAttribute('src', 'ipad-hero-unselected-201909_GEO_TW.png');
+
+            product.ipad.Outward.forEach((item, index) => {
+                let button = document.createElement("button");
+                button.style.fontSize = '36px';
+                button.classList.add('p-3');
+                button.classList.add('border-dark', 'border-4');
+                div.appendChild(button);
+                let yellow = document.createElement("img");
+                yellow.style.width = '40px';
+                button.appendChild(yellow);
+                yellow.setAttribute('src', `${item.src}`);
+                let text = document.createElement("div");
+                text.innerText = `${item.color}`;
+                button.appendChild(text);
+                button.addEventListener('click', requestJSON1);
+                function requestJSON1() {
+                    let cellphone = document.getElementById('cellphone');
+                    cellphone.setAttribute('src', `${item.picture}`);
+                }
+            });
+           
+            let h1_3 = document.getElementById("h1_3");
+            h1_3.innerText = "儲存容量。";
+            product.ipad.spec.stronge.forEach((item, index) => {
+                let button2 = document.createElement("button");
+                button2.style.fontSize = '36px';
+                button2.classList.add('p-3');
+                button2.classList.add('border-dark', 'border-4');
+                div2.appendChild(button2);
+                let text2 = document.createElement("div");
+                text2.innerHTML = `${item.size}<br>${item.fit}元`;
+                button2.appendChild(text2);
+
+
+
+            });
+            let h1_5 = document.getElementById("h1_5");
+            h1_5.innerText = "連線能力";
+            product.ipad.Connectivity.wifi.forEach((item, index) => {
+                let button3= document.createElement("button");
+                button3.style.fontSize = '36px';
+                button3.classList.add('p-3');
+                button3.classList.add('border-dark', 'border-4');
+                div3.appendChild(button3);
+                let text2 = document.createElement("div");
+                text2.innerHTML = `${item.name} <br> ${item.fit}元`;
+                button3.appendChild(text2);
+                button3.addEventListener('click', requestJSON2);
+                function requestJSON2() {
+                    let h1_4 = document.getElementById("h1_4");
+                    h1_4.innerText = `NT$${item.fit}元`;
+                }
+            });
+        }
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+<!-- { "id": "A001", "color": "黑色", "price": 19900, "storage": "64GB", "picture": "iphone-black.png" },
+{ "id": "A002", "color": "黑色", "price": 21500, "storage": "128GB", "picture": "iphone-black.png" },
+{ "id": "A003", "color": "黑色", "price": 25000, "storage": "256GB", "picture": "iphone-black.png" },
+{ "id": "A004", "color": "紅色", "price": 19900, "storage": "64GB", "picture": "iphone-red.png" },
+{ "id": "A005", "color": "紅色", "price": 21500, "storage": "128GB", "picture": "iphone-red.png" },
+{ "id": "A006", "color": "紅色", "price": 25000, "storage": "256GB", "picture": "iphone-red.png" },
+{ "id": "A007", "color": "黃色", "price": 19900, "storage": "64GB", "picture": "iphone-yellow.png" },
+{ "id": "A008", "color": "黃色", "price": 21500, "storage": "128GB", "picture": "iphone-yellow.png" },
+{ "id": "A009", "color": "黃色", "price": 25000, "storage": "256GB", "picture": "iphone-yellow.png" },
+
+{ "id": "B001", "color": "黑色", "price": 14800, "storage": "32GB", "network": "Cellular", "picture": "ipad-space.png" },
+{ "id": "B002", "color": "黑色", "price": 17800, "storage": "128GB", "network": "Cellular", "picture": "ipad-space.png" },
+{ "id": "B004", "color": "黑色", "price": 10500, "storage": "32GB", "network": "Wi-Fi", "picture": "ipad-space.png" },
+{ "id": "B005", "color": "黑色", "price": 13500, "storage": "128GB", "network": "Wi-Fi", "picture": "ipad-space.png" },
+{ "id": "B007", "color": "金色", "price": 14800, "storage": "32GB", "network": "Cellular", "picture": "ipad-gold.png" },
+{ "id": "B008", "color": "金色", "price": 17800, "storage": "128GB", "network": "Cellular", "picture": "ipad-gold.png" },
+{ "id": "B0010", "color": "金色", "price": 10500, "storage": "32GB", "network": "Wi-Fi", "picture": "ipad-gold.png" },
+{ "id": "B0011", "color": "金色", "price": 13500, "storage": "128GB", "network": "Wi-Fi", "picture": "ipad-gold.png" },
+{ "id": "B0013", "color": "白色", "price": 14800, "storage": "32GB", "network": "Cellular", "picture":
+"ipad-hero-unselected-201909_GEO_TW.png" },
+{ "id": "B0014", "color": "白色", "price": 17800, "storage": "128GB", "network": "Cellular", "picture":
+"ipad-hero-unselected-201909_GEO_TW.png" },
+{ "id": "B0016", "color": "白色", "price": 10500, "storage": "32GB", "network": "Wi-Fi", "picture":
+"ipad-hero-unselected-201909_GEO_TW.png" },
+{ "id": "B0017", "color": "白色", "price": 13500, "storage": "128GB", "network": "Wi-Fi", "picture":
+"ipad-hero-unselected-201909_GEO_TW.png" }, -->

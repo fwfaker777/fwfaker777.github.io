@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        body {
+            line-height: 1;
+
+        }
+
+        header {
+            overflow: clear;
+            position: relative;
+        }
+
+        #black {
+            height: 1px;
+            background: black;
+        }
+
+        td {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>行事曆-Demo</h1>
+    <div class="container">
+        <div id="black"></div>
+    </div>
+    <header>
+        <div class="d-flex px-4 mt-5 justify-content-between">
+            <button id="btn1">
+                < </button>
+                    <h2 id="h2"> </h2>
+                    <button id="btn2"> > </button>
+
+        </div>
+    </header>
+    <table class="table table-bordered container">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+
+    <template id='cardPizza'>
+        <div class="card">
+            <img src="" class="card-img-top" alt=""">
+            <div class=" card-body">
+            <h5 class=" card-title"></h5>
+            <p class="card-text"></p>
+
+        </div>
+        </div>
+    </template>
+
+    <!-- Model -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <img id='pizzaImage'>
+                    <h1 id="description" class="text-primary"></h1>
+                    <textarea id="item" cols="40" rows="5" placeholder="清單" aria-label="清單"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">close</button>
+                    <button type="button" class="btn btn-primary" id="save">save</button>
+                    <button type="button" class="btn btn-primary" id="delete">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script type='module'>
+
+        import { $g } from '../行事曆/helpers.js';
+
+
+        var dt = new Date();
+        var month = new Array(12);
+        month[0] = "一月";
+        month[1] = "二月";
+        month[2] = "三月";
+        month[3] = "四月";
+        month[4] = "五月";
+        month[5] = "六月";
+        month[6] = "七月";
+        month[7] = "八月";
+        month[8] = "九月";
+        month[9] = "十月";
+        month[10] = "十一月";
+        month[11] = "十二月";
+        let h2 = document.getElementById('h2');
+
+        let x = dt.getMonth();
+
+        h2.innerHTML = month[x];
+
+
+        function loadchart(prev, next) {
+            if (prev != '') { // 上月切换
+                if (x == 0) {
+
+                    x = 12;
+                    x = x - 1;
+
+                    h2.innerHTML = month[x];
+                } else {
+                    x = x - 1;
+
+                    h2.innerHTML = month[x];
+                }
+            }
+            if (next != '') { // 下月切换
+                if (x < 11) {
+                    x = x + 1;
+
+                    h2.innerHTML = month[x];
+                } else {
+                    x = 0;
+
+                    h2.innerHTML = month[x];
+
+                }
+            }
+        }
+
+
+
+        let btn1 = document.getElementById('btn1');
+
+
+        btn1.addEventListener('click', requestJSON13);
+        btn1.addEventListener('click', requestJSON2);
+        btn1.addEventListener('click', requestJSON11);
+        function requestJSON2() {
+            loadchart(true, '');
+        }
+
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', requestJSON13);
+        btn2.addEventListener('click', requestJSON1);
+        btn2.addEventListener('click', requestJSON11);
+        function requestJSON1() {
+            loadchart('', true);
+
+        }
+        function requestJSON13() {
+            tbody.innerHTML = "";
+        }
+
+        let thead, tbody;
+        function requestJSON11() {
+            var FirstDay = new Date(2021, x, 1).getDay();
+            console.log(x);
+            var LasttDay = new Date(2021, x, 31).getDay();
+            var curMonthDays = new Date(2021, x, 0).getDate();
+            var LastDayPrevMonth = new Date(2021, x, 0).getDate();
+
+            let z = LastDayPrevMonth - FirstDay + 1;
+            let index = 0;
+            let first = 0;
+
+            let tr = document.createElement("tr");
+            let card = $g('#cardPizza');
+
+            for (let i = z; i < 32; i++) {
+                z = document.createElement("td");
+                
+                z.innerHTML = `<span  style ="color: #a8a8a8"  > ${i}</span>`  ;
+
+
+
+                tr.append(z);
+                tbody.appendChild(tr);
+                index++;
+            }
+
+
+            for (let i = 1; i <= curMonthDays; i++) {
+                if (index % 7 == 0) {
+                    tr = document.createElement("tr");
+                }
+
+
+                z = document.createElement("td");
+
+                z.innerHTML = `${i}`;
+
+                let cloneContent = card.content.cloneNode(true);
+                cloneContent.querySelector('.card').addEventListener('click', function () {
+                    this.setAttribute('data-toggle', 'modal');
+                    this.setAttribute('data-target', '#exampleModal');
+
+                    let modal = $g('#exampleModal');
+                    modal.querySelector('h5').innerText = `2021年${month[x]}${i}日 代辦清單`;
+
+
+                    var storage = window.localStorage;
+
+                    document.querySelector("#save").onclick = function () {
+                        let textarea = document.querySelector("textarea").value;                        
+                        if (textarea != "") {
+                            localStorage.setItem(`2021年${month[x]}
+           ${i}日 `, textarea);
+                        }
+                    }
+
+
+                });
+             
+                document.querySelector("#delete").onclick = function () {
+                localStorage.clear();
+                }   
+                z.append(cloneContent);
+                tr.appendChild(z);
+                tbody.appendChild(tr);
+                index++;
+
+
+            }
+
+
+            for (let i = 1; i < 7; i++) {
+
+                if (index % 7 != 0) {
+                    first = document.createElement("td");
+                    
+                    first.innerHTML =  `<span  style ="color: #a8a8a8"  > ${i}</span>`  ;
+                    tr.appendChild(first);
+                    tbody.appendChild(tr);
+                    index++;
+                }
+            }
+
+
+
+        }
+        window.onload = function () {
+            thead = document.querySelector("table>thead");
+            tbody = document.querySelector("table>tbody");
+            //thead
+            let tr = document.createElement("tr");
+            let col01 = document.createElement("th");
+            col01.innerText = "日";
+            let col02 = document.createElement("th");
+            col02.innerText = "一";
+            let col03 = document.createElement("th");
+            col03.innerText = "二";
+            let col04 = document.createElement("th");
+            col04.innerText = "三";
+            let col05 = document.createElement("th");
+            col05.innerText = "四";
+            let col06 = document.createElement("th");
+            col06.innerText = "五";
+            let col07 = document.createElement("th");
+            col07.innerText = "六";
+            tr.appendChild(col01);
+            tr.appendChild(col02);
+            tr.appendChild(col03);
+            tr.appendChild(col04);
+            tr.appendChild(col05);
+            tr.appendChild(col06);
+            tr.appendChild(col07);
+            thead.appendChild(tr);
+
+            requestJSON11();
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

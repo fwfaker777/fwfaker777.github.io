@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .home {
+            position: absolute;
+            width: 179px;
+            height: 22px;
+            margin: 40px 0 0 650px;
+
+            z-index: 2;
+        }
+
+        .demo2-bg {
+            background: url(asset\ 49.jpeg) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 93%;
+
+            position: absolute;
+            z-index: 1;
+        }
+
+        .demo2 {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            line-height: 50px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .txt {
+            display: flex;
+            width: 800px;
+            margin: 90px 0 0 500px;
+            position: absolute;
+            z-index: 3;
+            column-count: 5;
+            column-gap: 50px;
+            color: cornsilk;
+        }
+
+        .tp {
+            margin: 250px 0 0 280px;
+            position: absolute;
+            z-index: 3;
+            color: cornsilk;
+        }
+
+        .tp h3 {
+            font-size: 130px;
+        }
+
+        .tp p {
+            font-size: 20px;
+            margin-bottom: 80px;
+        }
+
+        .fox .three {
+            width: 350px;
+        }
+
+        .fox {
+            width: 800px;
+            position: absolute;
+            z-index: 3;
+            column-count: 3;
+            column-gap: 400px;
+            margin: 550px 0 0 200px;
+
+        }
+
+        .fox .three h2 {
+            vertical-align: middle;
+            color: cornsilk;
+            font-size: 18px;
+        }
+
+        .fox .three img {
+            width: 30px;
+            vertical-align: middle;
+        }
+
+        .fox .three p {
+            color: cornsilk;
+            font-size: 20px;
+        }
+
+        .item {
+            width: 1200px;
+            display: flex;
+            margin: 800px 0 0 200px;
+            position: absolute;
+            z-index: 3;
+        }
+
+        .item h2 {
+            width: 25%;
+            font-size: 35px;
+        }
+
+        .item .text {
+            width: 66.6666%;
+            border-left: black solid 1px;
+            margin-left: 50px;
+            padding: 0 0 0 80px;
+            column-count: 2;
+            column-gap: 100px;
+        }
+
+        .item .text p:first-child:first-letter {
+            color: brown;
+            font-size: 60px;
+        }
+
+        .item h4 {
+            width: 250px;
+            margin: 490px 0 0 360px;
+            font-size: 40px;
+        }
+
+        .item h3 {
+            width: 300px;
+            margin-top: 490px;
+            font-size: 40px;
+            color: navajowhite;
+        }
+
+        .item>p {
+            width: 800px;
+            margin: 550px 0 0 -700px;
+            font-size: 20px;
+            display: flex;
+            text-align: center;
+        }
+
+
+        .item2 {
+            width: 100%;
+            height: 200px;
+            background-color: burlywood;
+            margin-top: 1000px;
+            position: absolute;
+            z-index: 3;
+        }
+
+        .item2 h4 {
+            margin: 75px 0 0 150px;
+            font-size: 40px;
+        }
+
+        .item2 p {
+            margin-left: 150px;
+            font-size: 20px;
+        }
+
+        h1 {
+            width: 1px;
+            height: 1px;
+            display: none;
+            position: absolute;
+        }
+
+        span {
+            color: #c2b697;
+        }
+
+        .box {
+            width: 1200px;
+            padding-top: 1600px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .box .cellphone_text_left {
+            margin: 50px 0 0 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box .cellphone_text {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 369px;
+            margin-bottom: 100px;
+        }
+
+        .box span {
+            font-size: 20px;
+        }
+
+        .box p {
+            font-size: 16px;
+        }
+
+        .box .cellphone_text ._text {
+            display: flex;
+            flex-direction: column;
+            text-align: end;
+            justify-content: center;
+        }
+
+        .box .cellphone_text_left img {
+            width: 80px;
+            height: 82.4px;
+        }
+
+        .box .cellphone_text_right {
+
+            display: flex;
+            flex-direction: column;
+            margin: 50px 50px 0 0;
+        }
+
+        .box .cellphone_text2 {
+            display: flex;
+            flex-direction: row;
+            width: 369px;
+            margin-bottom: 100px;
+        }
+
+        .box .cellphone_text_right img {
+            width: 80px;
+            height: 82.4px;
+
+        }
+
+        .box .cellphone_text2 ._text {
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            justify-content: center;
+        }
+
+        .sum {
+            background: url(2021.jfif) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 449.4px;
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sum img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .sum .sum1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 270px;
+            height: 214.4px;
+            justify-content: center;
+            text-transform: uppercase;
+            font-family: "Montserrat", Sans-serif;
+        }
+
+        .sum p {
+            font-size: 48px;
+            color: aliceblue;
+            line-height: 60px;
+        }
+
+        .sum h4 {
+            font-size: 12px;
+            margin: 5px 0 0;
+            color: aliceblue;
+            text-align: center;
+        }
+
+        .Good-at {
+            width: 100%;
+            height: 449.4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 70px;
+        }
+
+        .Good-at .text {
+            width: 570px;
+            height: 374.4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .Good-at .text h3 {
+            font-size: 36px;
+            line-height: 56.16px;
+        }
+
+        .Good-at .text p {
+            font-size: 18px;
+            line-height: 30.006px;
+            font-weight: 300px;
+        }
+
+        .Good-at .diagram {
+
+            width: 570px;
+            height: 265.2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 75px;
+        }
+
+        .Good-at .diagram .text {
+
+            display: flex;
+            flex-direction: row;
+            height: 17.6px;
+            margin-bottom: 7px;
+            justify-content: space-between;
+        }
+
+
+        .Good-at .text .ul {
+            height: 160.4px;
+            display: flex;
+            justify-content: space-between;
+
+            flex-direction: column;
+        }
+
+        .Good-at .text li {
+            font-size: 18px;
+            color: black;
+            margin: 10px;
+            list-style: initial;
+        }
+
+        .Good-at .diagram .block {
+            width: 100%;
+            height: 6px;
+            background-color: darkgray;
+        }
+
+        .Good-at .diagram .block2 {
+            width: 87%;
+            height: 6px;
+            background-color: peachpuff;
+        }
+
+        .Good-at .diagram .block3 {
+            width: 75%;
+            height: 6px;
+            background-color: peachpuff;
+        }
+
+        .Good-at .diagram .block4 {
+            width: 63%;
+            height: 6px;
+            background-color: peachpuff;
+        }
+
+        .Good-at .diagram .block5 {
+            width: 50%;
+            height: 6px;
+            background-color: peachpuff;
+        }
+
+        .Projects {
+            width: 100%;
+            height: 654.463px;
+            background: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .Projects h3 {
+            margin-top: 50px;
+            font-size: 36.16px;
+            line-height: 56.16px;
+            font-family: Prata, serif;
+            ;
+        }
+
+        .Projects .text {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 50px;
+
+        }
+
+        .Projects .text .text-text {
+            padding-left: 50px;
+        }
+
+        .Projects .text .text-text a {
+            color: darkgray;
+        }
+
+        .Projects .img {
+            display: flex;
+        }
+
+        .Projects img {
+            width: 379.8px;
+            height: 370.826px;
+        }
+
+        .Testimonials {
+            height: 365.6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 56px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1> imperion
+        <a href="#"><img class="home" src="asset 0.png" alt="home">
+        </a>
+    </h1>
+    <div class="demo2-bg">
+        <div class="demo2"></div>
+    </div>
+    <div class="txt">
+        <p>HOME</p>
+        <P>PAGES</P>
+        <P>FEATUES</P>
+        <P>NEWS</P>
+        <P>SHOP</P>
+    </div>
+    <div class="tp">
+        <h3>The Power</h3>
+        <P>OF IMAGINTION MAKES US INFINITE</P>
+        <p>--- 01/03 ---</p>
+    </div>
+    <div class="fox">
+        <div class="three">
+            <h2><img src="asset 46.png" alt="">DEVELOPMENT</h2>
+            <p>We work alongside national and international organizations.</p>
+        </div>
+        <div class="three">
+            <h2><img src="asset 46.png" alt="">INTEGRATION</h2>
+            <p>Committed to conducting its business according to the highest...</p>
+        </div>
+        <div class="three">
+            <h2><img src="asset 46.png" alt="">DEVELOPMENT</h2>
+            <p>Responsible customer relations through clear communication...</p>
+        </div>
+    </div>
+
+    <div class="item">
+        <h2>Looking for a First-Class Business Plan</h2>
+        <div class="text">
+            <p>We’re a financial and consulting business company of professional thinkers, strategists, digital
+                innovators, designers and problem solvers (everyone gets a mention). Our sense of curiosity brings </p>
+            <p>thinkers, strategists, digital innovators, designers and problem solvers (everyone gets a mention). Our
+                sense of curiosity brings brands to life, gets them talking, and makes sure they’re heard above.</p>
+        </div>
+
+    </div>
+
+    <div class="item2">
+        <h4>Unleash Your Team’s Productive Power</h4>
+        <p>The truly scarce resources now are the time, the talent, and the energy of the people.</p>
+    </div>
+    <div class="item">
+        <h4>Why Traders </h4>
+        <h3>Choose Us</h3>
+        <p>With a community of over 400 million users (and a majority age group being 18 to 29), wouldn’t you want to
+            make sure you’re monitoring what people are posting on social networks? Especially if the demographic of
+            your audience falls in that age range.</p>
+    </div>
+    <div class="box">
+
+        <div class="cellphone_text_left">
+            <div class="cellphone_text">
+                <img src="1.jpg" alt="">
+                <div class="_text">
+                    <h4><span>VISIT</span></h4>
+                    <p>Our values and ideals are our decision making guide.</p>
+                </div>
+            </div>
+            <div class="cellphone_text">
+                <img src="1.jpg" alt="">
+                <div class="_text">
+                    <h4><span>SAVE</span></h4>
+
+                    <p>We only release our products when we feel they meet our standards.</p>
+                </div>
+            </div>
+
+            <div class="cellphone_text">
+                <img src="1.jpg" alt="">
+                <div class="_text">
+                    <h4><span>EXPLORE</span></h4>
+
+                    <p>We rely on the same platform and tools our customers pay us for</p>
+                </div>
+            </div>
+        </div>
+        <div class="cellphone">
+            <img src="asset 1.png" alt="">
+        </div>
+        <div class="cellphone_text_right">
+            <div class="cellphone_text2">
+                <img src="1.jpg" alt="">
+                <div class="_text">
+                    <h4><span>ORGANIZE</span></h4>
+
+                    <p>Beautiful products to help people with creative ideas succeed</p>
+                </div>
+            </div>
+            <div class="cellphone_text2">
+                <img src="1.jpg" alt="">
+                <div class="_text">
+                    <h4><span>COMMUNICATE</span></h4>
+                    <p>Creative, stylish, and easy-to-manage online presence.</p>
+                </div>
+            </div>
+            <div class="cellphone_text2">
+                <img src="1.jpg" alt="">
+                <div class="_text">
+                    <h4> <span>SHARE</span></h4>
+
+                    <p>Share stories and create an impactful online presence.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sum">
+        <div class="sum1"><img src="2.jpg" alt="">
+            <p>2007</p>
+            <h4>COMPANY <br>
+                ESTABLISHED</h4>
+        </div>
+        <div class="sum1"><img src="3.jpg" alt="">
+            <p>426</p>
+            <h4>PROJECTS <br>
+                DONE</h4>
+        </div>
+        <div class="sum1"><img src="4.jpg" alt="">
+            <p>45+</p>
+            <h4>BUSINESS <br>
+                PARTHNERS</h4>
+        </div>
+        <div class="sum1"><img src="5.jpg" alt="">
+            <p>1510</p>
+            <h4>HAPPY <br>
+                CLIENTS</h4>
+        </div>
+    </div>
+    <div class="Good-at">
+        <div class="text">
+            <h3>What We <span>Are Good At</span></h3>
+            <p>With a community of over 400 million users (and a majority age group <br> being 18 to 29), wouldn’t you
+                want to make sure you’re monitoring what <br> people are posting on social networks?</p>
+            <div class="ul">
+                <ul>
+                    <li>Article and News research</li>
+                    <li>Company and Industry Research</li>
+                    <li>Industry Research and Market Research</li>
+                    <li>Market Analysis Report</li>
+                </ul>
+            </div>
+        </div>
+        <div class="diagram">
+            <div class="text">
+                <h4>FINANCIAL SERVICES
+                </h4>
+                <p>87%</p>
+            </div>
+            <div class="block">
+
+
+                <div class="block2"></div>
+            </div>
+
+
+            <div class="text">
+                <h4>BUSINESS SERVICES
+                </h4>
+                <p>75%</p>
+            </div>
+            <div class="block">
+
+
+                <div class="block3"></div>
+            </div>
+
+            <div class="text">
+                <h4>CONSUMER PRODUCTS
+                </h4>
+                <p>63%</p>
+            </div>
+            <div class="block">
+
+
+                <div class="block4"></div>
+            </div>
+
+            <div class="text">
+                <h4>ENERGY AND ENVIRONMENT
+                </h4>
+                <p>50%</p>
+            </div>
+            <div class="block">
+                <div class="block5">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="Projects">
+
+        <h3>Our Latest <span> Projects</span></h3>
+        <div class="text">
+            <div class="text-text"> <a href="#"><span>ALL</span></a></div>
+
+            <div class="text-text"><a href="#">ADVANCED ANALYTICS</a></div>
+            <div class="text-text"> <a href="#">CORPORATE FINANCE</a></div>
+            <div class="text-text"><a href="#">DIGITAL</a></div>
+            <div class="text-text"><a href="#">ORGANIZATION</a></div>
+            <div class="text-text"> <a href="#">PRIVATE EQUITY</a></div>
+            <div class="text-text"><a href="#">STRATEGY</a></div>
+            <div class="text-text"><a href="#">STRATEGY & MARKETING</a></div>
+        </div>
+        <div class="img">
+            <img src="asset 2.jpeg" alt="">
+            <img src="asset 3.jpeg" alt="">
+            <img src="asset 4.jpeg" alt="">
+            <img src="asset 5.jpeg " alt="">
+        </div>
+    </div>
+    <div class="Testimonials">
+        <p>Clients <span>Testimonials</span> </p>
+    </div>
+    
+
+</html>

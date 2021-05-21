@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css"
+        integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="./reset.css">
+</head>
+<style type="text/css">
+    @import url("https://use.fontawesome.com/releases/v5.1.1/css/all.css");
+
+    .island {
+        background-image: url(./Island2.jpg);
+        -webkit-background-size: cover;
+        /* For WebKit*/
+        -moz-background-size: cover;
+        /* Mozilla*/
+        -o-background-size: cover;
+        /* Opera*/
+        background-repeat: no-repeat;
+        height: 300px;
+        width: 100%;
+    }
+
+    .dropdown-menuP {
+        width: 100%;
+        height: 300px;
+    }
+
+    #container {
+        width: 1124px;
+        height: 302px;
+        margin-top: -100px;
+
+    }
+
+    #container1 {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        margin-top: -100px;
+    }
+
+    #inputGroupSelect02 {
+        width: 1028px;
+        height: 66px;
+        font-size: 25px;
+        margin-top: 50px;
+       
+    }
+
+    #inputGroupSelect03 {
+        width: 403px;
+        height: 66px;
+        font-size: 25px;
+        margin-left: 105px;
+        margin-top: 110px;
+    }
+
+    #inputGroupSelect04 {
+        width: 65px;
+
+        font-size: 21px;
+
+    }
+
+    #row {
+        display: inline-block;
+        width: 500px;
+
+        flex-direction: row;
+    }
+
+    #datetimepicker7 {
+        display: flex;
+        width: 255px;
+        height: 66px;
+        margin-left: -25px;
+        margin-top: 110px;
+    }
+
+    #datetimepicker8 {
+        display: flex;
+        width: 255px;
+        height: 66px;
+        margin-left: 80px;
+        margin-top: 110px;
+    }
+
+    .form-check {
+        width: 514px;
+        height: 66px;
+        display: flex;
+        margin-left: -10px;
+        align-items: center;
+        margin-top: 5px;
+        background-color: white;
+
+    }
+
+    #flexCheckDefault {
+        width: 18px;
+        height: 18px;
+
+    }
+
+    #motal {
+        width: 1078.65px;
+    }
+
+    #Customer-Service {
+        background-color: darkgrey;
+        width: 1519.2px;
+        height: 227.2px;
+    }
+
+    #search {
+        position: relative;
+        z-index: 2;
+        margin-left: 300px;
+        margin-top: 50px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+#sale-absolute{
+    position: absolute;
+    margin-top: 200px;
+}
+    #sale {
+        width: 63.2px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 400;
+        position: relative;
+        z-index: 2;
+        margin-top: -60px;
+        margin-left: -180px;
+    }
+  
+</style>
+</head>
+
+<body>
+
+    <nav class="nav navbar-default list-inline  navbar-fixed-top">
+        <div class="container-fluid  ">
+            <div class="navbar-header">
+                <li><a href="#"><img src="https://cdn6.agoda.net/images/MVC/default/agoda-logo-v2.png" alt=""></a></li>
+            </div>
+            <div>
+                <ul class="nav navbar-left  ">
+                    <li><a href="#" class="text-dark">機票+住宿</a></li>
+                    <li><a href="#" class="text-dark">搜好房</a></li>
+                    <li><a href="#" class="text-dark">找機票</a></li>
+                    <li><a href="#" class="text-dark">撿便宜</a></li>
+                    <li><a href="#" class="text-dark"><i class="fas fa-home"></i>公寓</a></li>
+
+                    <select class="form-select " id="inputGroupSelect04"
+                        style="background-image: none; border: 0px solid #ced4da;">
+                        <option selected>...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </ul>
+                <ul class="nav  navbar-right ">
+                    <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+                    <li><a data-toggle="tab" href="#">Log out</a></li>
+                    <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div>
+        <ul class="nav nav-tabs  ">
+            <li><a href="#"><img src="https://cdn6.agoda.net/images/MVC/default/agoda-logo-v2.png" alt=""></a></li>
+            <li><a href="#">機票+住宿</a></li>
+            <li><a href="#">搜好房</a></li>
+            <li><a href="#">找機票</a></li>
+            <li><a href="#">撿便宜</a></li>
+            <li><a href="#"><i class="fas fa-home"></i>公寓</a></li>
+
+            <select class="form-select " id="inputGroupSelect04"
+                style="background-image: none; border: 0px solid #ced4da;">
+                <option selected>...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+                <li><a data-toggle="tab" href="#">Log out</a></li>
+                <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+            </ul>
+
+
+        </ul>
+
+    </div> -->
+
+
+    <div class="island d-flex justify-content-center flex-column  align-items-center">
+        <h3 class="text-white">
+            訂飯店、住度假村、睡青年旅館
+        </h3>
+        <p class="text-white">
+            包山包海超過200萬間國內外各類優惠住宿
+        </p>
+
+    </div>
+    <div class="container bg-light" id="container">
+        <div class="input-group mb-3" >
+            <select class="form-select" id="inputGroupSelect02">
+                <option selected>台北市</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class=" bd-content">
+                        <div class="container " id="container1" style="display:flex;">
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input"
+                                            data-target="#datetimepicker7" />
+                                        <div class="input-group-append" data-target="#datetimepicker7"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker8" data-target-input="nearest"
+                                        style="display:flex">
+                                        <input type="text" class="form-control datetimepicker-input"
+                                            data-target="#datetimepicker8" />
+                                        <div class="input-group-append" data-target="#datetimepicker8"
+                                            data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3 ">
+                                <select class="form-select " id="inputGroupSelect03">
+                                    <option selected>1位大人</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-check border d-flex " id ="sale-absolute">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    享達25%的訂房折扣
+                </label>
+                <div id="sale">
+                    <h4 class="text-white bg-danger">機票+住宿</h4>
+                </div>
+            </div>
+
+
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" id="search" style="width:466px; ">搜出好價</button>
+       
+    </div>
+
+
+    <div class="container d-flex justify-content-center flex-column   " style="margin-top: 50px;">
+        <div class=" d-flex justify-content-center">
+            <h1 class="fs-4">台灣熱門城市</h1>
+        </div>
+
+        <div class="row">
+            <div class="d-flex   align-items-center">
+                <i class="fas fa-angle-left"></i>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">台北市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">台北市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">台北市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">台北市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">台北市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">台北市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center align-items-center flex-column" style="margin-top: 50px;">
+        <h1>推薦您下一趟旅行去處！</h1>
+        <div class="row" id="motal"  >
+            <div class="d-flex  align-items-center " >
+                <div class="col-3  border" style="margin: 20px; margin-left: -50px;">
+                    <img src="https://fakeimg.pl/251x150/C00CCC">
+                    <div >
+                        <div>
+                            <h3 class="fs-5">台北W酒店</h3>
+                            <p>信義區</p>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
+                            <span style="text-decoration:line-through"> NT$11024</span>
+                            <p class="text-danger">NT$5,500</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-3  border" style="margin: 20px;">
+                    <img src="https://fakeimg.pl/251x150/C00CCC">
+                    <div>
+                        <div>
+                            <h3 class="fs-5">台北W酒店</h3>
+                            <p>信義區</p>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
+                            <span style="text-decoration:line-through"> NT$11024</span>
+                            <p class="text-danger">NT$5,500</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-3  border" style="margin: 20px;">
+                    <img src="https://fakeimg.pl/251x150/C00CCC">
+                    <div>
+                        <div>
+                            <h3 class="fs-5">台北W酒店</h3>
+                            <p>信義區</p>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
+                            <span style="text-decoration:line-through"> NT$11024</span>
+                            <p class="text-danger">NT$5,500</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-3  border" style="margin: 20px;">
+                    <img src="https://fakeimg.pl/251x150/C00CCC">
+                    <div>
+                        <div>
+                            <h3 class="fs-5">台北W酒店</h3>
+                            <p>信義區</p>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
+                            <div id="sale">
+                                <h4 class="text-white bg-danger">2.2折扣</h4>
+                            </div>  
+                            <span style="text-decoration:line-through"> NT$11024</span>
+                            <p class="text-danger">NT$5,500</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center flex-column   " style="margin-top: 50px;">
+        <div class=" d-flex justify-content-center">
+            <h1 class="fs-4">台灣境外的熱門城市</h1>
+        </div>
+
+        <div class="row">
+            <div class="d-flex   align-items-center">
+                <i class="fas fa-angle-left"></i>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">香港市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">香港市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">香港市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">香港市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">香港市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
+                    <h2 class="fs-3">香港市</h2>
+                    <p class="fs-5">2982間宿舍</p>
+                </div>
+                <i class="fas fa-angle-right"></i>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="Customer-Service">
+        <div class="container   row">
+            <div class="d-flex  justify-content-center" style="margin-top: 50px; margin-left: 100px;">
+                <div class="col-2">
+                    <h3>
+                        課服中心
+                    </h3>
+                    <p>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心
+                    </p>
+                </div>
+
+                <div class="col-2">
+                    <h3>
+                        課服中心
+                    </h3>
+                    <p>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心
+                    </p>
+                </div>
+                <div class="col-2">
+                    <h3>
+                        課服中心
+                    </h3>
+                    <p>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心
+                    </p>
+                </div>
+                <div class="col-2">
+                    <h3>
+                        課服中心
+                    </h3>
+                    <p>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心
+                    </p>
+                </div>
+                <div class="col-2">
+                    <h3>
+                        課服中心
+                    </h3>
+                    <p>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心 <br>
+                        服務中心
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha256-98vAGjEDGN79TjHkYWVD4s87rvWkdWLHPs5MC3FvFX4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data-2012-2022.min.js"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+        integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+
+
+
+    <script>
+
+
+
+
+
+        $(function () {
+            $('#datetimepicker7').datetimepicker({ format: 'YYYY-MM-DD' });
+            $('#datetimepicker7').on("change.datetimepicker", function (e) {
+                $('#datetimepicker8').datetimepicker('minDate', e.date);
+            });
+            $('#datetimepicker8').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('#datetimepicker8').on("change.datetimepicker", function (e) {
+                $('#datetimepicker7').datetimepicker('maxDate', e.date);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Document</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet"
+    <!-- <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css"
-        integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
-
+        integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.bootcdn.net/ajax/libs/bootstrap-daterangepicker/3.1/daterangepicker.min.css" />
     <link rel="stylesheet" href="./reset.css">
 </head>
 <style type="text/css">
@@ -43,7 +44,8 @@
         width: 1124px;
         height: 302px;
         margin-top: -100px;
-
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 8px 3px;
+        background-color: rgb(248, 247, 249);
     }
 
     #container1 {
@@ -54,6 +56,7 @@
         margin-left: auto;
         position: relative;
         margin-top: -100px;
+
     }
 
     #inputGroupSelect02 {
@@ -61,14 +64,14 @@
         height: 66px;
         font-size: 25px;
         margin-top: 50px;
-       
+
     }
 
     #inputGroupSelect03 {
         width: 403px;
         height: 66px;
         font-size: 25px;
-        margin-left: 105px;
+        margin-left: 85px;
         margin-top: 110px;
     }
 
@@ -139,10 +142,12 @@
     a {
         text-decoration: none;
     }
-#sale-absolute{
-    position: absolute;
-    margin-top: 200px;
-}
+
+    #sale-absolute {
+        position: absolute;
+        margin-top: 200px;
+    }
+
     #sale {
         width: 63.2px;
         height: 20px;
@@ -152,15 +157,169 @@
         position: relative;
         z-index: 2;
         margin-top: -60px;
-        margin-left: -180px;
+        margin-left: -550px;
     }
-  
+
+    #datetime {
+        margin-top: 110px;
+        margin-left: -25px;
+    }
+
+    input[type="text"] {
+        font-family: FontAwesome;
+    }
+
+    .calendar-plus {
+        width: 400px;
+        height: 66px;
+        font-size: 21px;
+        line-height: 21px;
+
+    }
+
+    .head-nav {
+        padding: 0px 20px;
+        border-bottom: 1px solid black;
+    }
+
+    .head-nav-wrap {
+        /* padding: 8px 0px; */
+    }
+
+    .head-nav-wrap h2 {
+        margin-right: 20px;
+        margin-bottom: 0;
+        font-size: 0;
+    }
+
+    .head-nav-wrap h2 img {
+        width: 89px;
+        height: 37px;
+        vertical-align: bottom;
+    }
+
+    .head-nav-item {
+        display: inline-block;
+        margin-left: 30px;
+        padding: 18px 0;
+        color: rgb(56, 56, 56);
+        font-size: 14px;
+        font-family: "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", serif;
+        text-decoration: none;
+    }
+
+    .head-nav-item:hover {
+        color: rgb(99, 155, 238);
+    }
+
+    .head-nav-item.currency:hover {
+        color: rgb(56, 56, 56);
+    }
+
+    i.head-nav-item {
+        font-size: 20px;
+    }
+
+    .head-nav-item.red,
+    .head-nav-item.blue {
+        padding: 10px 10px;
+        /* height: fit-content; */
+        /*不設置fit-content的話，整個<a>的高度都超怪的 要嘛字底下一定有個空間，要嘛字上面有空間，超難弄成字是垂直置中的樣子*/
+        /* 後來才發現我對父層設定 align-items:center;就拯救了一切，但我還是先保留fit-content這個發現.. */
+        border-radius: 7px;
+        text-align: center;
+        transition: 0.2s;
+    }
+
+    .head-nav-item.red {
+        color: rgb(255, 74, 113);
+        border: 1px solid rgb(255, 74, 113);
+    }
+
+    .head-nav-item.red:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 74, 113);
+    }
+
+    .head-nav-item.blue {
+        color: rgb(99, 155, 238);
+        border: 1px solid rgb(99, 155, 238);
+    }
+
+    .head-nav-item.blue:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(99, 155, 238);
+    }
+
+    .flag-icon {
+        width: 30px;
+        height: 22.5px;
+        text-align: center;
+    }
+
+    .fix-nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 3;
+    }
+
+    .scroll-nav {
+        display: none;
+    }
+
+    .wrap-1200 {
+        width: 1200px;
+        margin: auto;
+    }
+
+    .search-bar {
+        height: 80px;
+        background-color: rgb(18, 18, 61);
+    }
+
+    .col-3 img {
+        width: 263.66px;
+        height: 150px;
+    }
+
+    li a {
+        color: black;
+        font-size: 10px;
+    }
 </style>
 </head>
 
 <body>
 
-    <nav class="nav navbar-default list-inline  navbar-fixed-top">
+
+    <nav id="head-nav" class="head-nav bg-white d-flex justify-content-between">
+        <div class="head-nav-wrap d-flex align-items-center">
+            <h2>
+                Agoda-Navbar
+                <img src="https://cdn6.agoda.net/images/MVC/default/agoda-logo-v2.png" alt="Agoda-Logo"
+                    title="Agoda-Logo-Homepage">
+            </h2>
+            <a href="#" class="head-nav-item ">找旅店</a>
+            <a href="#" class="head-nav-item ">撿便宜</a>
+            <!-- <i class="head-nav-item fas fa-ellipsis-h"></i> -->
+        </div>
+        <div class="head-nav-wrap d-flex align-items-center">
+            <a href="#" class="head-nav-item red">刊登家中空房</a>
+            <div class="head-nav-item">
+                <img src="../image/tw.svg.png" alt="" class="flag-icon">
+            </div>
+            <a href="#" class="head-nav-item currency">NT$</a>
+            <a href="#" class=" head-nav-item blue">A咖登入</a>
+            <a href="#" class="head-nav-item blue">我是新朋友</a>
+        </div>
+    </nav>
+    <div class="scroll-nav">
+        <nav class="search-bar">
+
+        </nav>
+    </div>
+    <!-- <nav class="nav navbar-default list-inline  navbar-fixed-top">
         <div class="container-fluid  ">
             <div class="navbar-header">
                 <li><a href="#"><img src="https://cdn6.agoda.net/images/MVC/default/agoda-logo-v2.png" alt=""></a></li>
@@ -188,7 +347,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <!-- <div>
         <ul class="nav nav-tabs  ">
@@ -219,17 +378,18 @@
     </div> -->
 
 
-    <div class="island d-flex justify-content-center flex-column  align-items-center">
-        <h3 class="text-white">
+    <div class="island d-flex flex-column  align-items-center">
+        <h3 class="text-white fw-bold"
+            style="font-size: 24px; line-height: 31.2px; margin-top: 50px; font-family: mallory,Helvetica Neue,Helvetica,Arial,sans-serif;">
             訂飯店、住度假村、睡青年旅館
         </h3>
-        <p class="text-white">
+        <p class="text-white" style="font-size: 20px; line-height: 26px;">
             包山包海超過200萬間國內外各類優惠住宿
         </p>
 
     </div>
-    <div class="container bg-light" id="container">
-        <div class="input-group mb-3" >
+    <div class="container  " id="container" style="border-radius: 16px;">
+        <div class="input-group mb-3">
             <select class="form-select" id="inputGroupSelect02">
                 <option selected>台北市</option>
                 <option value="1">One</option>
@@ -243,34 +403,17 @@
                 <div class="row">
                     <div class=" bd-content">
                         <div class="container " id="container1" style="display:flex;">
+                            <div id="datetime">
+                                <!-- <input id="date" type="date" value="2017-06-01"> -->
+                                <input name="daterange" type="text" class="calendar-minus 	calendar-plus"
+                                    value="&#xf272; 2021年5月21日 &#xf271; 2021年5月22日" style="width: 514px;">
 
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input"
-                                            data-target="#datetimepicker7" />
-                                        <div class="input-group-append" data-target="#datetimepicker7"
-                                            data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            <div class='row'>
-                                <div class="form-group">
-                                    <div class="input-group date" id="datetimepicker8" data-target-input="nearest"
-                                        style="display:flex">
-                                        <input type="text" class="form-control datetimepicker-input"
-                                            data-target="#datetimepicker8" />
-                                        <div class="input-group-append" data-target="#datetimepicker8"
-                                            data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
+
                             <div class="input-group mb-3 ">
-                                <select class="form-select " id="inputGroupSelect03">
+                                <select class="form-select " id="inputGroupSelect03" style="width: 500px;">
                                     <option selected>1位大人</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -284,25 +427,25 @@
                     </div>
                 </div>
             </div>
-            <div class="form-check border d-flex " id ="sale-absolute">
+            <div class="form-check border d-flex " id="sale-absolute">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault" style="width: 514px;">
                     享達25%的訂房折扣
                 </label>
-                <div id="sale">
-                    <h4 class="text-white bg-danger">機票+住宿</h4>
+                <div id="sale" class="d-flex justify-content-center bg-danger align-items-center">
+                    <h4 class="text-white ">住宿</h4>
                 </div>
             </div>
 
 
         </div>
         <button type="button" class="btn btn-primary btn-lg" id="search" style="width:466px; ">搜出好價</button>
-       
+
     </div>
 
 
-    <div class="container d-flex justify-content-center flex-column   " style="margin-top: 50px;">
-        <div class=" d-flex justify-content-center">
+    <div class="container d-flex justify-content-center flex-column   " style="margin-top: 100px;">
+        <div class=" d-flex justify-content-center" style="margin-bottom: 50px;">
             <h1 class="fs-4">台灣熱門城市</h1>
         </div>
 
@@ -310,34 +453,39 @@
             <div class="d-flex   align-items-center">
                 <i class="fas fa-angle-left"></i>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">台北市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/4951/1_4951_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">台北市</h2>
+                    <p style="font-size: 12px; line-height:16px;">2,976間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">台北市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/12080/1_12080_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">台中市</h2>
+                    <p style="font-size: 12px; line-height:16px;">1,592間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">台北市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle" src="https://pix6.agoda.net/geo/city/756/1_756_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">高雄市</h2>
+                    <p style="font-size: 12px; line-height:16px;">957間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">台北市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/18347/1_18347_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">台南市</h2>
+                    <p style="font-size: 12px; line-height:16px;">1,420間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">台北市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/88773/1_88773_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">宜蘭縣</h2>
+                    <p style="font-size: 12px; line-height:16px;">1,843間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">台北市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/23127/1_23127_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">花蓮縣</h2>
+                    <p style="font-size: 12px; line-height:16px;">2,003間宿舍</p>
                 </div>
                 <i class="fas fa-angle-right"></i>
             </div>
@@ -345,32 +493,14 @@
     </div>
 
     <div class="container d-flex justify-content-center align-items-center flex-column" style="margin-top: 50px;">
-        <h1>推薦您下一趟旅行去處！</h1>
-        <div class="row" id="motal"  >
-            <div class="d-flex  align-items-center " >
+        <h1 style=" font-size: 23px; line-height:32px;">推薦您下一趟旅行去處！</h1>
+        <div class="row" id="motal">
+            <div class="d-flex  align-items-center ">
                 <div class="col-3  border" style="margin: 20px; margin-left: -50px;">
-                    <img src="https://fakeimg.pl/251x150/C00CCC">
-                    <div >
-                        <div>
-                            <h3 class="fs-5">台北W酒店</h3>
-                            <p>信義區</p>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                        </div>
-                        <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
-                            <span style="text-decoration:line-through"> NT$11024</span>
-                            <p class="text-danger">NT$5,500</p>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="col-3  border" style="margin: 20px;">
-                    <img src="https://fakeimg.pl/251x150/C00CCC">
+                    <img src="https://pix6.agoda.net/hotelImages/335/335043/335043_16121920250049783861.jpg">
                     <div>
                         <div>
-                            <h3 class="fs-5">台北W酒店</h3>
+                            <h3 class="fw-bold" style="font-size: 16px; line-height:22px;">台北W酒店</h3>
                             <p>信義區</p>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
@@ -382,87 +512,112 @@
                             <p class="text-danger">NT$5,500</p>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="col-3  border" style="margin: 20px;">
-                    <img src="https://fakeimg.pl/251x150/C00CCC">
+                    <img src="https://pix6.agoda.net/hotelImages/5059720/0/feb524ebbcc31042755392d15d8cef3b.jpg">
                     <div>
                         <div>
-                            <h3 class="fs-5">台北W酒店</h3>
-                            <p>信義區</p>
+                            <h3 class="fw-bold" style="font-size: 16px; line-height:22px; ">飛行家青年旅館</h3>
+                            <p>苓雅區</p>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
+
                         </div>
                         <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
-                            <span style="text-decoration:line-through"> NT$11024</span>
-                            <p class="text-danger">NT$5,500</p>
+                            <span style="text-decoration:line-through"> NT$2,370</span>
+                            <p class="text-danger">NT$595</p>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="col-3  border" style="margin: 20px;">
-                    <img src="https://fakeimg.pl/251x150/C00CCC">
+                    <img
+                        src="https://pix6.agoda.net/hotelImages/4612444/-1/a9f27a564ebc9951ddc5cfc12970dfaa.jpg?s=450x450">
                     <div>
                         <div>
-                            <h3 class="fs-5">台北W酒店</h3>
-                            <p>信義區</p>
+                            <h3 class="fw-bold" style="font-size: 16px; line-height:22px;">鈞怡大飯店</h3>
+                            <p>高雄市</p>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+
+                        </div>
+                        <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
+                            <span style="text-decoration:line-through"> NT$6,234</span>
+                            <p class="text-danger">NT$1,234</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-3  border" style="margin: 20px;">
+                    <img
+                        src="https://pix6.agoda.net/hotelImages/21874089/-1/8a6235eaf9b5c0ae0a9484b253996530.jpg?s=450x450">
+                    <div>
+                        <div>
+                            <h3 class="fw-bold" style="font-size: 16px; line-height:22px;">塩‧泊思行旅</h3>
+                            <p>高雄市</p>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                             <i class="fas fa-star text-warning"></i>
                         </div>
                         <div class="d-flex justify-content-end  flex-column  align-items-end" style="height: 144px;">
-                            <div id="sale">
-                                <h4 class="text-white bg-danger">2.2折扣</h4>
-                            </div>  
-                            <span style="text-decoration:line-through"> NT$11024</span>
-                            <p class="text-danger">NT$5,500</p>
+                            <div id="sale" class="d-flex justify-content-center bg-danger align-items-center">
+                                <h4 class="text-white ">2.2折扣</h4>
+                            </div>
+                            <span style="text-decoration:line-through"> NT$3,611</span>
+                            <p class="text-danger">NT$764</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
     <div class="container d-flex justify-content-center flex-column   " style="margin-top: 50px;">
         <div class=" d-flex justify-content-center">
-            <h1 class="fs-4">台灣境外的熱門城市</h1>
+            <h1 class="fs-4" style="margin-bottom: 50px; ">台灣境外的熱門城市</h1>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-bottom: 50px;">
             <div class="d-flex   align-items-center">
                 <i class="fas fa-angle-left"></i>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">香港市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/16808/1_16808_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">香港</h2>
+                    <p style="font-size: 12px; line-height:16px;">1,792間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">香港市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/13170/1_13170_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">胡志明市</h2>
+                    <p style="font-size: 12px; line-height:16px;">10,146間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">香港市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/21397/1_21397_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">澳門</h2>
+                    <p style="font-size: 12px; line-height:16px;">144間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">香港市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/2758/1_2758_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">河內</h2>
+                    <p style="font-size: 12px; line-height:16px;">6,699間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">香港市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/14524/1_14524_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">吉隆坡</h2>
+                    <p style="font-size: 12px; line-height:16px;">11,303間宿舍</p>
                 </div>
                 <div class="col-2 d-flex flex-column justify-content-center align-items-center">
-                    <img class="rounded-circle" src="https://fakeimg.pl/124x124/C00CCC">
-                    <h2 class="fs-3">香港市</h2>
-                    <p class="fs-5">2982間宿舍</p>
+                    <img class="rounded-circle"
+                        src="https://pix6.agoda.net/geo/city/9395/1_9395_02.jpg?s=124x124&ar=1x1">
+                    <h2 class="fw-bold" style="font-size: 16px; line-height:22px; margin-top: 20px;">曼谷</h2>
+                    <p style="font-size: 12px; line-height:16px;">10,409間宿舍</p>
                 </div>
                 <i class="fas fa-angle-right"></i>
 
@@ -476,64 +631,59 @@
         <div class="container   row">
             <div class="d-flex  justify-content-center" style="margin-top: 50px; margin-left: 100px;">
                 <div class="col-2">
-                    <h3>
-                        課服中心
+                    <h3 class="fw-bolder" style=" font-size: 14px; line-height:15.4px; margin-bottom: 10px;">
+                        客服中心
                     </h3>
-                    <p>
+                    <p style=" font-size: 13px; line-height:18px;">
                         服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心
+                        常見問題 <br>
+                        隱私權政策 <br>
+                        Cookie政策 <br>
+                        服務條款
                     </p>
                 </div>
 
                 <div class="col-2">
-                    <h3>
-                        課服中心
+                    <h3 class="fw-bolder" style=" font-size: 14px; line-height:15.4px; margin-bottom: 10px;">
+                        關於我們
                     </h3>
-                    <p>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心
+                    <p style=" font-size: 13px; line-height:18px;">
+                        PointsMax <br>
+                        職缺情報 <br>
+                        新聞報導 <br>
+                        旅遊部落格
+
                     </p>
                 </div>
                 <div class="col-2">
-                    <h3>
-                        課服中心
+                    <h3 class="fw-bolder" style=" font-size: 14px; line-height:15.4px; margin-bottom: 10px;">
+                        目的地
                     </h3>
-                    <p>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心
+                    <p style=" font-size: 13px; line-height:18px;">
+                        國家/地區 <br>
+                        城市
                     </p>
                 </div>
                 <div class="col-2">
-                    <h3>
-                        課服中心
+                    <h3 class="fw-bolder" style=" font-size: 14px; line-height:15.4px; margin-bottom: 10px;">
+                        成為合作夥伴
                     </h3>
-                    <p>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心
+                    <p style=" font-size: 13px; line-height:18px;">
+                        YCS夥伴平台 <br>
+                        Partner Hub<br>
+                        供應商招募<br>
+                        行銷夥伴 <br>
+                        Connectivity平台
                     </p>
                 </div>
                 <div class="col-2">
-                    <h3>
-                        課服中心
+                    <h3 class="fw-bolder" style=" font-size: 14px; line-height:15.4px; margin-bottom: 10px;">
+                        行動訂房神器
                     </h3>
-                    <p>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心 <br>
-                        服務中心
+                    <p style=" font-size: 13px; line-height:18px;">
+                        iOS免費下載 <br>
+                        Android 免費下載 <br>
+
                     </p>
                 </div>
             </div>
@@ -541,15 +691,396 @@
 
     </div>
     </div>
+    <div class="container" style="width:1132px; margin-top: 50px; margin-bottom: 50px;">
+        <div class="d-flex">
+            <div style="width: 156.8px;   list-style:none; ">
+                <span class="fw-normal" style="width: 65px; line-height: 60px; font-size: 16px;">
+                    目的地城市
+                </span>
+                <li style=" line-height: 30px; font-size: 16px; 
+              ">
+                    <span>
+                        亞洲
+                    </span>
+
+                </li>
+                <ul>
+
+                    <li><a href="">峇里島飯店 </a></li>
+                    <li><a href="">萬隆飯店
+                        </a></li>
+                    <li><a href="">曼谷飯店
+                        </a></li>
+                    <li><a href="">長灘島飯店
+                        </a></li>
+                    <li><a href="">釜山飯店
+                        </a></li>
+                    <li><a href="">宿霧飯店
+                        </a></li>
+                    <li><a href="">清邁飯店
+                        </a></li>
+                    <li><a href="">峴港飯店
+                        </a></li>
+                    <li><a href="">福岡飯店
+                        </a></li>
+                    <li><a href="">河內飯店
+                        </a></li>
+                    <li><a href="">合艾飯店
+                        </a></li>
+                    <li><a href="">胡志明市飯店</a></li>
+                    <li><a href="">會安飯店
+                        </a></li>
+                    <li><a href="">香港飯店
+                        </a></li>
+                    <li><a href="">華欣飯店
+                        </a></li>
+                    <li><a href="">花蓮飯店
+                        </a></li>
+                    <li><a href="">怡保飯店
+                        </a></li>
+                    <li><a href="">雅加達飯店
+                        </a></li>
+                    <li><a href="">濟州島飯店
+                        </a></li>
+                    <li><a href="">新山飯店
+                        </a></li>
+                    <li><a href="">高雄飯店
+                        </a></li>
+                    <li><a href="">亞庇飯店
+                        </a></li>
+                    <li><a href="">喀比飯店
+                        </a></li>
+                    <li><a href="">吉隆坡飯店
+                        </a></li>
+                    <li><a href="">關丹飯店
+                        </a></li>
+                    <li><a href="">京都飯店
+                        </a></li>
+                </ul>
+            </div>
+
+            <div style="width: 156.8px; list-style:none; ">
+
+                <ul>
+                    <li> <a href="">澳門飯店 </a></li>
+                    <li> <a href="">馬六甲飯店</a></li>
+                    <li> <a href="">馬尼拉飯店</a></li>
+                    <li> <a href="">名古屋飯店</a></li>
+                    <li> <a href="">芽莊飯店
+                        </a></li>
+                    <li> <a href="">沖繩飯店
+                        </a></li>
+                    <li> <a href="">大阪飯店
+                        </a></li>
+                    <li> <a href="">芭達雅飯店</a></li>
+                    <li> <a href="">檳城飯店
+                        </a></li>
+                    <li> <a href="">普吉島飯店</a></li>
+                    <li> <a href="">札幌飯店
+                        </a></li>
+                    <li> <a href="">首爾飯店
+                        </a></li>
+                    <li> <a href="">上海飯店
+                        </a></li>
+                    <li> <a href="">新加坡飯店</a></li>
+                    <li> <a href="">泗水飯店
+                        </a></li>
+                    <li> <a href="">台中飯店
+                        </a></li>
+                    <li> <a href="">台南飯店
+                        </a></li>
+                    <li> <a href="">台北飯店
+                        </a></li>
+                    <li> <a href="">東京飯店
+                        </a></li>
+                    <li> <a href="">宜蘭飯店
+                        </a></li>
+                    <li> <a href="">日惹飯店
+                        </a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>歐洲</span>
+                    </li>
+                    <li><a href="">倫敦飯店
+                        </a></li>
+                    <li><a href="">
+                            巴黎飯店</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>中東</span>
+                    </li>
+                    <li><a href="">
+                            杜拜飯店</a></li>
+                </ul>
+            </div>
+            <div style="width: 156.8px; list-style:none; ">
+                <ul>
+                    <li style="line-height: 60px; font-size: 16px;">
+                        <span>
+                            國家和地區
+                        </span>
+                    </li>
+
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>非洲</span>
+                    </li>
+                    <li>
+                        <a href="">
+                            摩洛哥飯店</a>
+                    </li>
+                    <li><a href="">
+                            南非飯店</a></li>
+
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>美洲</span>
+                    </li>
+                    <li><a href="">
+                            阿根廷飯店</a></li>
+                    <li><a href="">
+                            巴西飯店</a></li>
+                    <li><a href="">
+                            加拿大飯店</a></li>
+                    <li><a href="">
+                            墨西哥飯店</a></li>
+                    <li><a href="">
+                            美國飯店</a></li>
+                    <li><a href="">
+                            委內瑞拉飯店</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>亞洲</span>
+                    </li>
+                    <li><a href="">柬埔寨飯店</a></li>
+                    <li><a href="">中國飯店</a></li>
+                    <li><a href="">印度飯店</a></li>
+                    <li><a href="">印尼飯店</a></li>
+                    <li><a href="">日本飯店</a></li>
+                    <li><a href="">寮國飯店</a></li>
+                    <li><a href="">馬來西亞飯店</a></li>
+                    <li><a href="">緬甸飯店</a></li>
+                    <li><a href="">尼泊爾飯店</a></li>
+                    <li><a href="">菲律賓飯店</a></li>
+                    <li><a href="">南韓飯店</a></li>
+                    <li><a href="">斯里蘭卡飯店</a></li>
+                    <li><a href="">台灣飯店</a></li>
+                    <li><a href="">泰國飯店</a></li>
+                    <li><a href="">越南飯店</a></li>
+
+                </ul>
+            </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+            <div style="width: 156.8px; list-style:none; ">
+
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>歐洲</span>
+                    </li>
+
+                    <li><a href="">奧地利飯店</a></li>
+                    <li><a href="">捷克飯店</a></li>
+                    <li><a href="">丹麥飯店</a></li>
+                    <li><a href="">芬蘭飯店</a></li>
+                    <li><a href="">法國飯店</a></li>
+                    <li><a href="">德國飯店</a></li>
+                    <li><a href="">希臘飯店</a></li>
+                    <li><a href="">匈牙利飯店</a></li>
+                    <li><a href="">愛爾蘭飯店</a></li>
+                    <li><a href="">義大利飯店</a></li>
+                    <li><a href="">荷蘭飯店</a></li>
+                    <li><a href="">俄羅斯飯店</a></li>
+                    <li><a href="">西班牙飯店</a></li>
+                    <li><a href="">瑞典飯店</a></li>
+                    <li><a href="">瑞士飯店</a></li>
+                    <li><a href="">英國飯店</a></li>
+                </ul>
+
+
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>中東</span>
+                    </li>
+                    <li><a href="">巴林飯店</a></li>
+                    <li><a href="">埃及飯店</a></li>
+                    <li><a href="">以色列飯店</a></li>
+                    <li><a href="">阿拉伯聯合大公國飯店</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>太平洋</span>
+                    </li>
+                    <li><a href="">澳洲飯店</a></li>
+                    <li><a href="">紐西蘭飯店</a></li>
+                </ul>
+
+
+            </div>
+
+
+            <div style="width: 156.8px; list-style:none; ">
+                <li style=" line-height: 40px; font-size: 16px; ">
+                    <span>目的地指南</span>
+                </li>
+                <li><a href="">目的地指南首頁</a></li>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>亞洲</span>
+                    </li>
+                    <li><a href="">峇里島指南</a></li>
+                    <li><a href="">曼谷指南</a></li>
+                    <li><a href="">香港指南</a></li>
+                    <li><a href="">雅加達指南</a></li>
+                    <li><a href="">濟州島指南</a></li>
+                    <li><a href="">吉隆坡指南</a></li>
+                    <li><a href="">京都指南</a></li>
+                    <li><a href="">九州指南</a></li>
+                    <li><a href="">馬六甲指南</a></li>
+                    <li><a href="">馬尼拉指南</a></li>
+                    <li><a href="">奈良指南</a></li>
+                    <li><a href="">大阪指南</a></li>
+                    <li><a href="">普吉島指南</a></li>
+                    <li><a href="">札幌指南</a></li>
+                    <li><a href="">首爾指南</a></li>
+                    <li><a href="">新加坡指南</a></li>
+                    <li><a href="">台中指南</a></li>
+                    <li><a href="">台北指南</a></li>
+                    <li><a href="">東京指南</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>歐洲</span>
+                    </li>
+                    <li><a href="">巴黎指南</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>中東</span>
+                    </li>
+                    <li><a href="">杜拜指南</a></li>
+                    <li><a href="">吉達指南</a></li>
+                    <li><a href="">沙烏地阿拉伯指南</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>太平洋洲</span>
+                    </li>
+                    <li><a href="">布里斯本指南</a></li>
+                    <li><a href="">墨爾本指南</a></li>
+                    <li><a href="">雪梨指南</a></li>
+                </ul>
+            </div>
+            <div style="width: 156.8px; list-style:none; ">
+                <li style=" line-height: 40px; font-size: 16px; ">
+                    <span>Agoda Homes</span>
+                </li>
+                <ul>
+
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>亞洲公寓</span>
+                    </li>
+                    <li><a href="">曼谷公寓</a></li>
+                    <li><a href="">吉隆坡公寓</a></li>
+                    <li><a href="">馬尼拉公寓</a></li>
+                    <li><a href="">大阪公寓</a></li>
+                    <li><a href="">芭達雅公寓</a></li>
+                    <li><a href="">東京公寓</a></li>
+
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>亞洲小屋</span>
+                    </li>
+                    <li><a href="">峇里島小屋</a></li>
+                    <li><a href="">庫德島小屋</a></li>
+                    <li><a href="">蘭塔島小屋</a></li>
+                    <li><a href="">帕岸島小屋</a></li>
+                    <li><a href="">沙美島小屋</a></li>
+                    <li><a href="">富國島小屋</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>亞洲別墅</span>
+                    </li>
+                    <li><a href="">峇里島別墅</a></li>
+                    <li><a href="">普吉島別墅</a></li>
+                    <li><a href="">芭達雅別墅</a></li>
+                    <li><a href="">華欣/七岩別墅</a></li>
+                    <li><a href="">首爾別墅</a></li>
+                    <li><a href="">波德申別墅</a></li>
+                </ul>
+                <ul>
+                    <li style=" line-height: 40px; font-size: 16px; ">
+                        <span>亞洲度假住宿</span>
+                    </li>
+                    <li><a href="">濟州島度假住宿</a></li>
+                    <li><a href="">沖繩本島度假住宿</a></li>
+                    <li><a href="">東京度假住宿</a></li>
+                    <li><a href="">曼谷度假住宿</a></li>
+                    <li><a href="">吉隆坡度假住宿</a></li>
+                    <li><a href="">馬六甲度假住宿</a></li>
+
+                </ul>
+            </div>
+            <div style="width: 156.8px; list-style:none; ">
+                <li style=" line-height: 40px; font-size: 16px; ">
+                    <span>探索</span>
+                </li>
+                <li><a href="">長住方案</a></li>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="bg-dark d-flex  flex-column   justify-content-center  align-items-center">
+        <p class="text-white-50" style="margin-top: 70px; text-align:center">
+            本網站內容由© 2005–2021 Agoda Company Pte. Ltd.保留所有權利 <br>
+            Agoda.com隸屬於全球線上旅遊相關事業的領導品牌Booking Holdings集團。
+        </p>
+        <div class="container" style="margin-top: 50px;">
+            <div class="d-flex">
+                <div class="col-2">
+                    <img src="./img1.png" alt="">
+                </div>
+                <div class="col-2">
+                    <img src="./img2.png" alt="">
+                </div>
+                <div class="col-2">
+                    <img src="./img3.png" alt="">
+                </div>
+                <div class="col-2">
+                    <img src="./img4.png" alt="">
+                </div>
+                <div class="col-2">
+                    <img src="./img5.png" alt="">
+                </div>
+                <div class="col-2">
+                    <img src="./img6.png" alt="">
+                </div>
+            </div>
+        </div>
+         <p class="text-white-50" style="margin-top: 70px;">
+            hk-crweb-2009
+         </p>
+
+    </div>
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -562,47 +1093,104 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
 
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha256-98vAGjEDGN79TjHkYWVD4s87rvWkdWLHPs5MC3FvFX4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/moment.js/2.24.0/locale/zh-cn.jss"></script>
     <script type="text/javascript"
+        src="https://cdn.bootcdn.net/ajax/libs/bootstrap-daterangepicker/3.1/daterangepicker.min.js"></script>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ -->
+
+    <!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha256-98vAGjEDGN79TjHkYWVD4s87rvWkdWLHPs5MC3FvFX4=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8=" crossorigin="anonymous"></script> -->
+    <!-- <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
     <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data-2012-2022.min.js"></script>
-
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
-        integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.21/moment-timezone-with-data-2012-2022.min.js"></script> -->
 
 
 
+    <!-- 
+    <script language="javascript">
+        var Today = new Date();
+
+        //  Today.innerText = Today.getFullYear()+ " - " + Today.getMonth()+1 + " - " + Today.getDate()
+
+        Today.value = Today.getFullYear() + "-0" + (Today.getMonth() + 1) + "-" + Today.getDate();
+        var dateControl = document.querySelector('input[type="date"]');
+        dateControl.value = Today.value;
+
+    </script> -->
     <script>
 
 
 
-
-
         $(function () {
-            $('#datetimepicker7').datetimepicker({ format: 'YYYY-MM-DD' });
-            $('#datetimepicker7').on("change.datetimepicker", function (e) {
-                $('#datetimepicker8').datetimepicker('minDate', e.date);
-            });
-            $('#datetimepicker8').datetimepicker({
-                format: 'YYYY-MM-DD'
-            });
-            $('#datetimepicker8').on("change.datetimepicker", function (e) {
-                $('#datetimepicker7').datetimepicker('maxDate', e.date);
+            $('input[name="daterange"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: 'Clear'
+                },
+                opens: 'left'
+            }, function (start, end, label) {
+                console.log("选择了一个新的日期: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             });
         });
+        // var dateControl = document.querySelector('input[name="daterange"]');
+        // dateControl.value = `<i class="far fa-calendar"></i>`;
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            let html = document.getElementsByTagName('html')[0];
+            let scrollNav = document.querySelector('.scroll-nav')
+
+            if (html.scrollTop > 60) {
+
+                scrollNav.classList.add('fix-nav');
+                scrollNav.style.display = 'block';
+            }
+            else {
+                scrollNav.classList.remove('fix-nav');
+                scrollNav.style.display = 'none';
+            }
+
+        })
     </script>
 
 </body>
 
 </html>
+
+
+<!-- <script
+    //     src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+    //     integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script> -->
+
+
+
+<!-- <script>
+
+
+
+
+
+// $(function () {
+// $('#datetimepicker7').datetimepicker({ format: 'YYYY-MM-DD' });
+// $('#datetimepicker7').on("change.datetimepicker", function (e) {
+// $('#datetimepicker8').datetimepicker('minDate', e.date);
+// });
+// $('#datetimepicker8').datetimepicker({
+// format: 'YYYY-MM-DD'
+// });
+// $('#datetimepicker8').on("change.datetimepicker", function (e) {
+// $('#datetimepicker7').datetimepicker('maxDate', e.date);
+// });
+// });
+// </script> -->
